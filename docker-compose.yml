@@ -7,7 +7,7 @@ services:
     container_name: "mysql_master"
     restart: "no"
     ports:
-      - 4406:3306
+      - 3306:3306
     volumes:
       - ./master/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
       - ./master/data:/var/lib/mysql
@@ -21,7 +21,7 @@ services:
     container_name: "mysql_slave1"
     restart: "no"
     ports:
-      - 5506:3306
+      - 33106:3306
     depends_on:
       - mysql_master
     volumes:
@@ -37,7 +37,7 @@ services:
     container_name: "mysql_slave2"
     restart: "no"
     ports:
-      - 7706:3306
+      - 33206:3306
     depends_on:
       - mysql_master
     volumes:
@@ -53,7 +53,7 @@ services:
     container_name: "mysql_slave3"
     restart: "no"
     ports:
-      - 8806:3306
+      - 33306:3306
     depends_on:
       - mysql_master
     volumes:
