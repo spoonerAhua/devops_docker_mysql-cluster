@@ -6,7 +6,7 @@ root_password="111"             # 每台服务器的root密码
 # 主库列表
 master_container=mysql_master
 # 从库列表
-slave_containers=(mysql_slave1 mysql_slave2)
+slave_containers=(mysql_slave1 mysql_slave2 mysql_slave3)
 # 所有的数据库集群列表
 all_containers=("$master_container" "${slave_containers[@]}")
 
