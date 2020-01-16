@@ -6,7 +6,7 @@ root_password="111"             # 每台服务器的root密码
 # 主库列表
 master_container=mysql_master
 # 从库列表
-slave_containers=(mysql_slave mysql_slave2)
+slave_containers=(mysql_slave1 mysql_slave2)
 # 所有的数据库集群列表
 all_containers=("$master_container" "${slave_containers[@]}")
 
@@ -21,7 +21,7 @@ docker-ip() {
 
 #################### docker-compose初始化 ####################
 docker-compose down
-rm -rf ./master/data/* ./slave/data/* ./slave2/data/*
+rm -rf ./master/data/* ./slave1/data/* ./slave2/data/*
 docker-compose build
 docker-compose up -d
 
